@@ -29,12 +29,14 @@ end
 get "/projects/:id" do
   projects = ["portfolio", "REPL Game", "Voting Simulation"]
   @project = projects[params["id"].to_i]
-  "Here's my #{@project} page!"
+  id = "project_" + params["id"].to_s
+  proj_layout = id.to_sym
+  erb :project, :layout => proj_layout
 end
 
 get "/link/:id" do
-  links = {linkedin: "https://www.linkedin.com", github: "https://github.com", twitter: "https://twitter.com"}
-  id = params["id"].to_s
-  @link = links[id.to_sym]
+  # links = {linkedin: "https://www.linkedin.com", github: "https://github.com", twitter: "https://twitter.com"}
+  # id = params["id"].to_s
+  # @link = links[id.to_sym]
   erb :link
 end

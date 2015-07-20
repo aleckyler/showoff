@@ -1,4 +1,9 @@
+<!-- <p><%= "Go to #{@id}" %></p> -->
+<!-- <a href= <%= @link %> >Go to <%= @id %></a> -->
 <p>
+  <% links = {linkedin: "https://www.linkedin.com", github: "https://github.com", twitter: "https://twitter.com"} %>
+  <% id = params["id"].to_s %>
+  <% @link = links[id.to_sym] %>
   <%= p "Go to " %>
   <a href= <%= @link %> ><%= id %></a>
 </p>
