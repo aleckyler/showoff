@@ -1,0 +1,10 @@
+<p>Hello</p>
+
+<% list = ["this", "that", "the other"] %>
+
+<ul>
+<%# prints a list %>
+<% list.each do |item| %>
+  <%= "<li>#{item}" %>
+<% end %>
+</ul>
